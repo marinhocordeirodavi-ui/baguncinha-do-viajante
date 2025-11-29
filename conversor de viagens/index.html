@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light">
+    <link rel="stylesheet" href="style.css?v=20251122v11">
+    <title>Baguncinha do Viajante - Conversor de Moedas e Ferramentas de Viagem</title>
+    <meta name="description" content="Conversor de moedas em tempo real, clima, calculadora de orçamento e checklist para sua viagem internacional.">
+    <meta name="keywords" content="conversor moedas, câmbio, viagem, clima, orçamento, checklist">
+    <meta property="og:title" content="Baguncinha do Viajante">
+    <meta property="og:description" content="Ferramentas essenciais para sua viagem internacional">
+    <meta property="og:type" content="website">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+    <header>
+        <h1><i class="ph ph-airplane-tilt"></i> Baguncinha do Viajante</h1>
+    </header>
+
+    <main class="container">
+        <h2>O que você precisa converter hoje?</h2>
+        <p>Ferramentas essenciais para sua viagem internacional.</p>
+
+        <div class="cards-container">
+            <a href="moeda.html" class="card-item">
+                <div class="card-icon"><i class="ph ph-currency-dollar"></i></div>
+                <h3>Conversor de Moedas</h3>
+                <p>Cotações em tempo real</p>
+            </a>
+
+            <a href="medidas.html" class="card-item">
+                <div class="card-icon"><i class="ph ph-thermometer"></i></div>
+                <h3>Medidas e Clima</h3>
+                <p>Roupas, distâncias e temperatura</p>
+            </a>
+
+            <a href="checklist.html" class="card-item">
+                <div class="card-icon"><i class="ph ph-clipboard-text"></i></div>
+                <h3>Checklist</h3>
+                <p>Não esqueça o passaporte!</p>
+            </a>
+
+            <a href="orcamento.html" class="card-item">
+                <div class="card-icon"><i class="ph ph-wallet"></i></div>
+                <h3>Orçamento</h3>
+                <p>Calcule seus gastos</p>
+            </a>
+
+            <a href="dicionario.html" class="card-item">
+                <div class="card-icon"><i class="ph ph-translate"></i></div>
+                <h3>Dicionário</h3>
+                <p>Frases de sobrevivência</p>
+            </a>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 Baguncinha do Viajante</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <button onclick="toggleSOS()" class="btn-sos" title="Emergência">
+        <i class="ph ph-siren"></i> SOS
+    </button>
+
+    <div id="modal-sos" class="modal-sos-overlay hidden">
+        <div class="card modal-sos-content">
+            <div class="modal-header">
+                <h3 style="color: #ef4444;"><i class="ph ph-warning-circle"></i> Emergência</h3>
+                <button onclick="toggleSOS()" class="btn-icon"><i class="ph ph-x"></i></button>
+            </div>
+
+            <p>Onde você está?</p>
+
+            <select id="select-pais-sos" onchange="atualizarNumerosEmergencia()">
+                <option value="" disabled selected>Selecione o país...</option>
+                <option value="EU">🇪🇺 Europa (União Europeia)</option>
+                <option value="US">🇺🇸 Estados Unidos</option>
+                <option value="BR">🇧🇷 Brasil</option>
+                <option value="AR">🇦🇷 Argentina</option>
+                <option value="GB">🇬🇧 Reino Unido</option>
+                <option value="JP">🇯🇵 Japão</option>
+                <option value="CA">🇨🇦 Canadá</option>
+                <option value="CL">🇨🇱 Chile</option>
+                <option value="AU">🇦🇺 Austrália</option>
+                <option value="CN">🇨🇳 China</option>
+            </select>
+
+            <div id="resultado-sos-dinamico" class="lista-emergencia mt-15">
+                <p style="font-size:0.9rem; color:#aaa; text-align:center; margin-top:10px;">
+                    Selecione um país acima para ver os números.
+                </p>
+            </div>
+
+            <p style="font-size:0.8rem; margin-top:15px; opacity:0.7;">
+                Use apenas em casos reais de perigo.
+            </p>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

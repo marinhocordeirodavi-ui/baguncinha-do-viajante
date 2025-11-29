@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light">
+    <link rel="stylesheet" href="style.css?v=20251122v11">
+    <title>Conversor de Moedas</title>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+    <header>
+        <h1><i class="ph ph-currency-dollar"></i> Conversor</h1>
+        <nav><a href="index.html">⬅ Voltar para Home</a></nav>
+    </header>
+
+    <main class="container">
+        <div class="card">
+            <h3><i class="ph ph-arrows-left-right"></i> Cotação Hoje</h3>
+
+            <label for="valor-moeda">Valor:</label>
+            <input type="number" id="valor-moeda" placeholder="Digite o valor (ex: 100.00)">
+
+            <div class="flex-row gap-10 align-end">
+
+                <div class="flex-1">
+                    <label for="moeda-origem">De:</label>
+                    <select id="moeda-origem">
+                        <option value="BRL">Real (BRL)</option>
+                        <option value="USD" selected>Dólar (USD)</option>
+                        <option value="EUR">Euro (EUR)</option>
+                        <option value="GBP">Libra (GBP)</option>
+                        <option value="ARS">Peso Arg. (ARS)</option>
+                        <option value="JPY">Iene (JPY)</option>
+                        <option value="CHF">Franco Suíço (CHF)</option>
+                        <option value="AUD">Dólar Aus. (AUD)</option>
+                        <option value="CAD">Dólar Can. (CAD)</option>
+                        <option value="CNY">Yuan Chinês (CNY)</option>
+                        <option value="MXN">Peso Mex. (MXN)</option>
+                        <option value="INR">Rúpia Ind. (INR)</option>
+                    </select>
+                </div>
+
+                <button onclick="inverterMoedas()" class="btn-icon" title="Inverter">
+                    <i class="ph ph-arrows-down-up"></i>
+                </button>
+
+                <div class="flex-1">
+                    <label for="moeda-destino">Para:</label>
+                    <select id="moeda-destino">
+                        <option value="BRL" selected>Real (BRL)</option>
+                        <option value="USD">Dólar (USD)</option>
+                        <option value="EUR">Euro (EUR)</option>
+                        <option value="GBP">Libra (GBP)</option>
+                        <option value="ARS">Peso Arg. (ARS)</option>
+                        <option value="JPY">Iene (JPY)</option>
+                        <option value="CHF">Franco Suíço (CHF)</option>
+                        <option value="AUD">Dólar Aus. (AUD)</option>
+                        <option value="CAD">Dólar Can. (CAD)</option>
+                        <option value="CNY">Yuan Chinês (CNY)</option>
+                        <option value="MXN">Peso Mex. (MXN)</option>
+                        <option value="INR">Rúpia Ind. (INR)</option>
+                    </select>
+                </div>
+            </div>
+            <button onclick="converterMoeda()" class="btn">Converter Agora</button>
+
+            <div id="resultado-moeda" class="resultado"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Baguncinha © 2025</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

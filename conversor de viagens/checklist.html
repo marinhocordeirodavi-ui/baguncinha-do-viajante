@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <link rel="stylesheet" href="style.css?v=20251122v11">
+  <title>Checklist de Viagem</title>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+  <header>
+    <h1><i class="ph ph-clipboard-text"></i> Checklist</h1>
+    <nav><a href="index.html">⬅ Voltar para Home</a></nav>
+  </header>
+  <main class="container">
+    <div class="card">
+      <h3><i class="ph ph-list-checks"></i> Não esqueça nada!</h3>
+      <div class="progress-container">
+        <div class="progress-info">
+          <span id="progress-text">0/0 itens</span>
+          <span id="progress-percent">0%</span>
+        </div>
+        <div class="progress-bar">
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+      </div>
+      <div class="pacotes-container">
+        <button onclick="adicionarPacote('praia')" class="btn-chip praia" aria-label="Adicionar pacote praia">🏖️ Praia</button>
+        <button onclick="adicionarPacote('frio')" class="btn-chip frio" aria-label="Adicionar pacote frio">❄️ Inverno</button>
+        <button onclick="adicionarPacote('internacional')" class="btn-chip inter" aria-label="Adicionar pacote internacional">✈️ Internacional</button>
+      </div>
+      <div class="flex-row gap-10">
+        <input type="text" id="item-input" placeholder="Ex: Passaporte, Adaptador..." aria-label="Novo item" onkeypress="if(event.key === 'Enter') adicionarItem()">
+      </div>
+      <ul id="lista-viagem" aria-live="polite"></ul>
+      <p id="empty-state" style="display:none; font-size:0.85rem; color:#666;">Nenhum item ainda. Adicione com o botão +</p>
+      <div class="flex-row gap-10">
+        <button onclick="exportarChecklist()" class="btn btn-success" aria-label="Exportar checklist"><i class="ph ph-download-simple"></i> Exportar</button>
+        <button onclick="importarChecklist()" class="btn btn-info" aria-label="Importar checklist"><i class="ph ph-upload-simple"></i> Importar</button>
+      </div>
+      <button onclick="limparLista()" class="btn-text-danger" aria-label="Limpar toda a lista"><i class="ph ph-trash"></i> Limpar Tudo</button>
+    </div>
+  </main>
+  <footer>
+    <p>Baguncinha © 2025</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>

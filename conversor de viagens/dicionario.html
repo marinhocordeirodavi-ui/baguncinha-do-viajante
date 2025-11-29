@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <link rel="stylesheet" href="style.css?v=20251122v11">
+  <title>Tradutor Universal - Baguncinha</title>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+  <header>
+    <h1><i class="ph ph-chat-circle-text"></i> Tradutor</h1>
+    <nav><a href="index.html">⬅ Voltar para Home</a></nav>
+  </header>
+
+  <main class="container">
+
+    <div class="card">
+      <h3><i class="ph ph-translate"></i> Tradutor Universal</h3>
+
+      <div class="language-row">
+        <div class="select-group">
+          <label for="idioma-origem">De:</label>
+          <select id="idioma-origem">
+            <option value="pt-BR" selected>🇧🇷 Português</option>
+            <option value="en">🇺🇸 Inglês</option>
+            <option value="es">🇪🇸 Espanhol</option>
+            <option value="fr">🇫🇷 Francês</option>
+            <option value="it">🇮🇹 Italiano</option>
+            <option value="de">🇩🇪 Alemão</option>
+            <option value="ja">🇯🇵 Japonês</option>
+            <option value="zh">🇨🇳 Chinês</option>
+            <option value="ru">🇷🇺 Russo</option>
+          </select>
+        </div>
+
+        <div class="exchange-icon">
+          <i class="ph ph-arrow-right"></i>
+        </div>
+
+        <div class="select-group">
+          <label for="idioma-destino">Para:</label>
+          <select id="idioma-destino" onchange="atualizarFrasesOffline()">
+            <option value="en" selected>🇺🇸 Inglês</option>
+            <option value="es">🇪🇸 Espanhol</option>
+            <option value="fr">🇫🇷 Francês</option>
+            <option value="it">🇮🇹 Italiano</option>
+            <option value="de">🇩🇪 Alemão</option>
+            <option value="ja">🇯🇵 Japonês</option>
+            <option value="zh">🇨🇳 Chinês</option>
+            <option value="ru">🇷🇺 Russo</option>
+            <option value="pt-BR">🇧🇷 Português</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="input-wrapper">
+        <textarea id="texto-para-traduzir" placeholder="Digite aqui o que quer traduzir..." rows="4" oninput="mostrarBotaoLimpar()"></textarea>
+        <button onclick="limparTexto()" id="btn-limpar" class="btn-clear hidden" title="Limpar texto">
+          <i class="ph ph-x"></i>
+        </button>
+      </div>
+
+      <button onclick="traduzirAgora()" class="btn mt-15" style="margin-top: 15px;">
+        <i class="ph ph-paper-plane-right"></i> Traduzir Agora
+      </button>
+
+      <div id="resultado-traducao" class="resultado mt-15 hidden" style="margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">
+        <p class="label-resultado">Tradução:</p>
+        <h2 id="texto-traduzido" style="color: var(--cor-principal); margin: 10px 0;">...</h2>
+
+        <button onclick="falarTraducao()" class="btn-icon-large" title="Ouvir pronúncia">
+          <i class="ph ph-speaker-high"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3><i class="ph ph-lightning"></i> Frases Salvas</h3>
+      <p style="font-size: 0.85rem; opacity: 0.7; margin-bottom: 15px;">
+        Você pode usar frases comuns mesmo sem internet!
+      </p>
+
+      <div id="lista-frases-rapidas" class="flex-col gap-10">
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Baguncinha © 2025</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

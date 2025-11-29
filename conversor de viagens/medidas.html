@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <link rel="stylesheet" href="style.css?v=20251122v11">
+  <title>Clima e Medidas</title>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+  <header>
+    <h1><i class="ph ph-cloud-sun"></i> Clima & Medidas</h1>
+    <nav><a href="index.html">⬅ Voltar para Home</a></nav>
+  </header>
+
+  <main class="container">
+    <div class="card weather-card">
+      <h3><i class="ph ph-map-pin"></i> Previsão do Tempo</h3>
+
+      <div class="flex-row gap-10" style="margin-bottom:15px;">
+        <input type="text" id="cidade-input" placeholder="Digite a cidade (ex: Paris)" aria-label="Cidade">
+        <button onclick="buscarClima()" class="btn-icon" aria-label="Buscar clima"><i class="ph ph-magnifying-glass"></i></button>
+      </div>
+
+      <div id="resultado-clima" style="display: none;">
+        <div class="weather-info">
+          <i id="weather-icon" class="ph ph-sun weather-icon"></i>
+          <div>
+            <h2 id="weather-temp" class="weather-temp">--°C</h2>
+            <p id="weather-desc" class="weather-desc">--</p>
+          </div>
+        </div>
+        <p id="weather-city" class="weather-city">--</p>
+      </div>
+      <div id="loading-clima" style="display: none; color:#64748b; margin-top: 15px;">Buscando previsão...</div>
+    </div>
+
+    <div class="card">
+      <h3><i class="ph ph-ruler"></i> Conversor Rápido</h3>
+
+      <label for="valor-medida">Valor:</label>
+      <input type="number" id="valor-medida" placeholder="Digite o valor">
+
+      <label for="tipo-medida">Tipo de Conversão:</label>
+      <select id="tipo-medida">
+        <option value="c-f">Celsius para Fahrenheit</option>
+        <option value="f-c">Fahrenheit para Celsius</option>
+        <option value="km-mi">Km para Milhas</option>
+        <option value="mi-km">Milhas para Km</option>
+        <option value="kg-lb">Kg para Libras</option>
+        <option value="lb-kg">Libras para Kg</option>
+        <option value="l-gal">Litros para Galões</option>
+        <option value="gal-l">Galões para Litros</option>
+      </select>
+
+      <button onclick="converterMedida()" class="btn" aria-label="Calcular conversão">Calcular</button>
+
+      <div id="resultado-medida" class="resultado"></div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Baguncinha © 2025</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
